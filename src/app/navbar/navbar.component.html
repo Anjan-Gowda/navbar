@@ -3,16 +3,9 @@
     <div class="navbar-header">
       <a class="navbar-brand" routerLink="" (click)="active('home')">ABC</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li [ngClass]="{ active: _active == 'home' }">
-        <a routerLink="/home" (click)="active('home')">Home</a>
-      </li>
-      <li [ngClass]="{ active: _active == 'movies' }">
-        <a routerLink="/movies" (click)="active('movies')">Movies</a>
-      </li>
-
-      <li [ngClass]="{ active: _active == 'login' }">
-        <a routerLink="/login" (click)="active('login')">Login</a>
+    <ul class="nav navbar-nav" *ngFor="let nav of navComponent">
+      <li [ngClass]="{ active: _active == nav.class }">
+        <a [routerLink]="[nav.path]" (click)="active('home')">{{ nav.name }}</a>
       </li>
     </ul>
   </div>
