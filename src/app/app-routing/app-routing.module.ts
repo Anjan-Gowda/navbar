@@ -2,21 +2,22 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from '../app.component';
 import { HomeComponent } from '../home/home.component';
-import { LogoutComponent } from '../logout/logout.component';
+import { LoginComponent } from '../login/login.component';
 import { MoviesComponent } from '../movies/movies.component';
+import { AuthGuard } from '../services/auth.guard';
 
 const routes: Routes = [
   {
     path:'',component:HomeComponent
   },
   {
-    path:'home',component:HomeComponent
+    path:'home',component:HomeComponent,canActivate:[AuthGuard]
   },
   {
-    path:'logout',component:LogoutComponent
+    path:'login',component:LoginComponent
   },
   {
-    path:'movies',component:MoviesComponent
+    path:'movies',component:MoviesComponent,canActivate:[AuthGuard]
   }
 ];
 @NgModule({ 
