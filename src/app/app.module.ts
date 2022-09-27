@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
@@ -13,7 +13,7 @@ import { AuthService } from './services/auth.service';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule,AppRoutingModule ],
+  imports:      [ BrowserModule, FormsModule,AppRoutingModule,ReactiveFormsModule ],
   declarations: [ AppComponent, HelloComponent,HomeComponent,LoginComponent,MoviesComponent,NavbarComponent ],
   bootstrap:    [ AppComponent ],
   providers:[AuthGuard,AuthService]

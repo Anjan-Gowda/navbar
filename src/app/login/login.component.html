@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row" *ngIf="islogin">
+
+  </div>
+  <div class="row" *ngIf="!islogin">
+    <div class="col-sm-10">
+      <form [formGroup]="_loginForm" (ngSubmit)="login()">
+        <input
+          type="text"
+          class="form-control p-2 "
+          formControlName="username"
+          name="formControlName"
+          placeholder="Username: Ex: username@123"
+        />
+
+        <input
+          type="password"
+          class="form-control m-10"
+          formControlName="pwd"
+          name="pwd"
+          placeholder="password: Ex: passwaord@123"
+        />
+        <button class="btn btn-primary form-control" [disabled]="_loginForm.invalid">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

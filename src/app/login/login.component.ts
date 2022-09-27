@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -6,10 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor() { }
+_loginForm:FormGroup;
+islogin:boolean;
+  constructor(private fb:FormBuilder,private as:AuthService) {
+this.islogin=this.as._isAuth;
+   }
 
   ngOnInit() {
+    this._loginForm=this.fb.group({
+      username:['',[Validators.required]],
+      pwd:['',[Validators.required]]
+    })
+  }
+
+  login(){
+    if(this._loginForm.value.username=='Admin' && this._loginForm.value.pwd=='anjan'){
+      this.islogin=true;
+      this.as._isAuth=true;
+    }
   }
 
 }

@@ -8,22 +8,27 @@ import { AuthGuard } from '../services/auth.guard';
 
 const routes: Routes = [
   {
-    path:'',component:HomeComponent
+    path: '',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
   },
   {
-    path:'home',component:HomeComponent,canActivate:[AuthGuard]
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
   },
   {
-    path:'login',component:LoginComponent
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path:'movies',component:MoviesComponent,canActivate:[AuthGuard]
-  }
+    path: 'movies',
+    component: MoviesComponent,
+    canActivate: [AuthGuard],
+  },
 ];
-@NgModule({ 
-   imports: [
-      RouterModule.forRoot(routes)
-   ],
-   exports: [RouterModule] 
-}) 
-export class AppRoutingModule { }
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
