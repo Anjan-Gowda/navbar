@@ -4,13 +4,11 @@ import { data } from '../data';
 @Component({
   selector: 'app-cars',
   templateUrl: './cars.component.html',
-  styleUrls: ['./cars.component.css']
+  styleUrls: ['./cars.component.css'],
 })
 export class CarsComponent implements OnInit {
-cars:any=data;
-  constructor() { }
+  cars: any = data;
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

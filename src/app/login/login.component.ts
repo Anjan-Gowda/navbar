@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ModalComponent } from '../modal/modal.component';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -11,6 +12,8 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent implements OnInit {
   _loginForm: FormGroup;
   islogin: boolean;
+
+  @ViewChild('modal',{static:false}) modal:ModalComponent
   constructor(
     private fb: FormBuilder,
     private as: AuthService,
@@ -24,6 +27,7 @@ export class LoginComponent implements OnInit {
       username: ['', [Validators.required]],
       pwd: ['', [Validators.required]],
     });
+    console.log("here")
   }
 
   login() {
@@ -35,5 +39,9 @@ export class LoginComponent implements OnInit {
       this.as._isAuth = true;
       this.route.navigateByUrl('/home');
     }
+  }
+  openModal(){
+    this.modal.open();
+
   }
 }

@@ -1,8 +1,12 @@
-<div class="card d-inline-flex p-5 m-2" style="width: 18rem;" *ngFor="let car of cars" >
-  <img [src]="car.imageUrl" class="card-img-top" alt="...">
+<div
+  class="card d-inline-flex p-5 m-2"
+  style="width: 18rem;"
+  *ngFor="let car of cars"
+>
+  <img [src]="car.imageUrl" class="card-img-top" alt="..." />
   <div class="card-body">
-    <h5 class="card-title">{{car.model}}</h5>
-    <p class="card-text">{{car.make}} : {{car.bodyType}}-{{car.year}}</p>
-    <a href="#" class="btn btn-primary" >View more ...</a>
+    <h5 class="card-title">{{ car.model }}</h5>
+    <p class="card-text">{{ car.make }} : {{ car.bodyType }}-{{ car.year }}</p>
+    <a href="#" class="btn btn-primary">View more ...</a>
   </div>
 </div>

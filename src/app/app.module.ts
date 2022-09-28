@@ -12,11 +12,21 @@ import { AuthGuard } from './services/auth.guard';
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './login/login.component';
 import { CarsComponent } from './cars/cars.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule,AppRoutingModule,ReactiveFormsModule ],
-  declarations: [ AppComponent, HelloComponent,HomeComponent,LoginComponent,MoviesComponent,NavbarComponent,CarsComponent ],
-  bootstrap:    [ AppComponent ],
-  providers:[AuthGuard,AuthService]
+  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    HomeComponent,
+    LoginComponent,
+    MoviesComponent,
+    NavbarComponent,
+    CarsComponent,
+    ModalComponent
+  ],
+  bootstrap: [AppComponent],
+  providers: [AuthGuard, AuthService],
 })
-export class AppModule { }
+export class AppModule {}
