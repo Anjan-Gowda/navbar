@@ -13,9 +13,24 @@ import { AuthService } from './services/auth.service';
 import { LoginComponent } from './login/login.component';
 import { CarsComponent } from './cars/cars.component';
 import { ModalComponent } from './modal/modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatButtonModule
+  ],
   declarations: [
     AppComponent,
     HelloComponent,
@@ -24,7 +39,7 @@ import { ModalComponent } from './modal/modal.component';
     MoviesComponent,
     NavbarComponent,
     CarsComponent,
-    ModalComponent
+    ModalComponent,
   ],
   bootstrap: [AppComponent],
   providers: [AuthGuard, AuthService],

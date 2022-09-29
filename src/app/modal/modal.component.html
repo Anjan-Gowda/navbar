@@ -1,6 +1,17 @@
-<div #myModal class="container">
-<div class="content">
-  <p>Some content here...</p>
-  <button (click)="close()">Close</button>
+
+<div mat-dialog-content>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>User Name</mat-label>
+      <input matInput placeholder="Ex. Admin12" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Ex. password" >
+    </mat-form-field>
+  </form>
+ 
 </div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data.username" cdkFocusInitial>Login</button>
 </div>

@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ModalComponent } from '../modal/modal.component';
 import { AuthService } from '../services/auth.service';
@@ -12,36 +13,47 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent implements OnInit {
   _loginForm: FormGroup;
   islogin: boolean;
+  username: string;
+  pwd: string;
 
-  @ViewChild('modal',{static:false}) modal:ModalComponent
   constructor(
     private fb: FormBuilder,
     private as: AuthService,
-    private route: Router
+    private route: Router,
+    public dialog: MatDialog
   ) {
     this.islogin = this.as._isAuth;
   }
 
   ngOnInit() {
-    this._loginForm = this.fb.group({
+    /*  this._loginForm = this.fb.group({
       username: ['', [Validators.required]],
       pwd: ['', [Validators.required]],
-    });
-    console.log("here")
+    }); */
+    console.log('here');
+    this.openDialog();
   }
 
   login() {
-    if (
+    /*  if (
       this._loginForm.value.username == 'Admin' &&
       this._loginForm.value.pwd == 'anjan'
     ) {
       this.islogin = true;
       this.as._isAuth = true;
       this.route.navigateByUrl('/home');
-    }
+    }*/
   }
-  openModal(){
-    this.modal.open();
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '250px',
+      data: { username: this.username, pwd: this.pwd },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      this.username = result;
+    });
   }
 }

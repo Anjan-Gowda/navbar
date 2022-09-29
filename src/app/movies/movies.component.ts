@@ -10,3 +10,4 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit() {}
 }
+ 

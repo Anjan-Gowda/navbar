@@ -17,7 +17,7 @@ export const data: any[] = [
   },
   {
     make: 'Nissan',
-    model: 'Altima',
+    model: 'Altima', 
     year: 2022,
     bodyType: 'Hatch-back',
     imageUrl:
@@ -40,3 +40,9 @@ export const data: any[] = [
       'https://media.istockphoto.com/photos/mercedesbenz-aclass-on-the-street-picture-id1018875560?k=20&m=1018875560&s=612x612&w=0&h=9TYm-v5IzgVoBQoG5nGqVcab69JnFwrSuO0iQUouoo8=',
   },
 ];
+
+
+export interface DialogData {
+  username: string;
+  pwd: string;
+}
