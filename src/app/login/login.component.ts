@@ -11,7 +11,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  _loginForm: FormGroup;
+  _loginForm: any;
   islogin: boolean;
   username: string;
   pwd: string;
@@ -35,25 +35,29 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    /*  if (
-      this._loginForm.value.username == 'Admin' &&
-      this._loginForm.value.pwd == 'anjan'
-    ) {
-      this.islogin = true;
-      this.as._isAuth = true;
-      this.route.navigateByUrl('/home');
-    }*/
+    if(this._loginForm!=undefined){
+      if(this._loginForm[0].ngmodel=='Admin' && this._loginForm[1].ngmodel=='anjan'){
+         this.islogin = true;
+         this.as._isAuth = true;
+          this.route.navigateByUrl('/home');
+      }
+    }
   }
+
 
   openDialog(): void {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '250px',
-      data: { username: this.username, pwd: this.pwd },
+      data: [
+        { label: 'User name', placeholder: 'User name', ngmodel: '' },
+        { label: 'Password', placeholder: 'Password', ngmodel: '' },
+      ],
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      this.username = result;
+      console.log('The dialog was closed', result);
+      this._loginForm = result;
+      this.login();
     });
   }
 }

@@ -1,17 +1,16 @@
 
 <div mat-dialog-content>
   <form class="example-form">
+    <ng-container *ngFor="let t of template" >
+
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>User Name</mat-label>
-      <input matInput placeholder="Ex. Admin12" >
+      <mat-label>{{t.label}}</mat-label>
+      <input matInput [placeholder]="t.placeholder" [name]="t.ngmodel" [(ngModel)]="t.ngmodel"  [ngModelOptions]="{standalone: true}">
     </mat-form-field>
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Password</mat-label>
-      <input matInput placeholder="Ex. password" >
-    </mat-form-field>
+    </ng-container>
   </form>
- 
+  
 </div>
 <div mat-dialog-actions>
-  <button mat-button [mat-dialog-close]="data.username" cdkFocusInitial>Login</button>
+  <button mat-button [mat-dialog-close]="template" cdkFocusInitial >Login</button>
 </div>

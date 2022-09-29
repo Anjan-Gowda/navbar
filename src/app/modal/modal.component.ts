@@ -9,10 +9,12 @@ import { DialogData } from '../data';
 export class ModalComponent implements OnInit {
   username: string;
   pwd: string;
+  template:any;
 
   constructor( public dialogRef: MatDialogRef<ModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,) 
     {
+      this.template=data
       console.log("d",data);
     }
 
