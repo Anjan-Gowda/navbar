@@ -13,16 +13,36 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav" *ngFor="let nav of navComponent">
+      <ul class="navbar-nav">
+        <ng-container   *ngFor="let nav of navComponent">
+
         <li [ngClass]="{ active: _active == nav.class }" class="nav-item">
           <a
             [routerLink]="[nav.path]"
             (click)="active('home')"
             class="nav-link"
             >{{ nav.name }}</a
-          >
-        </li> 
+          > 
+        </li>
+        </ng-container >
+        <li class="nav-item"  *ngIf="isLoggedIn" (click)="signout()">
+
+          <a>
+  
+            SignOut
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="!isLoggedIn" (click)="signin()">
+  
+          
+          <a >
+      
+            SignIn
+          </a>
+        </li>
       </ul>
+      
     </div>
+
   </div>
 </nav>
