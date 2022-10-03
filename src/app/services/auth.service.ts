@@ -10,7 +10,7 @@ export class AuthService {
     return this._isAuth;
   }
 
-  private _d: BehaviorSubject<any> = new BehaviorSubject<any>(false);
+  private _d : BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   currentState = this._d.asObservable();
 
   setAuth(message :boolean){

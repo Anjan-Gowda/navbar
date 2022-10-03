@@ -22,7 +22,10 @@ export class LoginComponent implements OnInit {
     private route: Router,
     public dialog: MatDialog
   ) {
-    this.islogin = this.as._isAuth;
+    // this.islogin = this.as._isAuth;
+    this.as.currentState.subscribe((d) => {
+      this.islogin = d;
+    });
   }
 
   ngOnInit() {
@@ -35,18 +38,21 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if(this._loginForm!=undefined){
-      if(this._loginForm[0].ngmodel=='Admin' && this._loginForm[1].ngmodel=='anjan'){
-         this.islogin = true;
-         this.as._isAuth = true;
-          this.route.navigateByUrl('/home');
+    if (this._loginForm != undefined) {
+      if (
+        this._loginForm[0].ngmodel == 'Admin' &&
+        this._loginForm[1].ngmodel == 'anjan'
+      ) {
+        this.islogin = true;
+        this.as._isAuth = true;
+        this.route.navigateByUrl('/home');
       }
     }
   }
 
-
   openDialog(): void {
     const dialogRef = this.dialog.open(ModalComponent, {
+      disableClose: true,
       width: '250px',
       data: [
         { label: 'User name', placeholder: 'User name', ngmodel: '' },
