@@ -12,7 +12,7 @@ export class MoviesComponent implements OnInit {
     ) {}
 
   ngOnInit() {
- 
+  
   }
   
   openDialog(): void {

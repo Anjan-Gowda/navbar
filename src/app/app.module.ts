@@ -19,7 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
-@NgModule({
+@NgModule({ 
   imports: [
     BrowserModule,
     FormsModule,

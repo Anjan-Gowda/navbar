@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
     this._active = 'home';
 this.as.currentState.subscribe(d=>{
   this.isLoggedIn=d
-})  }
+})  } 
 
   ngOnInit() {}
   active(item) {

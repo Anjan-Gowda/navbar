@@ -8,7 +8,7 @@ import { MoviesComponent } from '../movies/movies.component';
 import { AuthGuard } from '../services/auth.guard';
   
 const routes: Routes = [
-  {
+  { 
     path: '',
     component: HomeComponent,
     canActivate: [AuthGuard],

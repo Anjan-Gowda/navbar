@@ -18,7 +18,7 @@ export class ModalComponent implements OnInit {
       console.log("d",data);
     }
 
-  ngOnInit() {
+  ngOnInit() { 
   }
 
   

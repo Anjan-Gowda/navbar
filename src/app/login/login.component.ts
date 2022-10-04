@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   islogin: boolean;
   username: string;
   pwd: string;
-
+ 
   constructor(
     private fb: FormBuilder,
     private as: AuthService,
