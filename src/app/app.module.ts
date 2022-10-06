@@ -18,6 +18,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { AlertsComponent } from './alerts/alerts.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({ 
   imports: [
@@ -40,6 +42,8 @@ import { MatButtonModule } from '@angular/material/button';
     NavbarComponent,
     CarsComponent,
     ModalComponent,
+    AlertsComponent,
+    CarouselComponent
   ],
   bootstrap: [AppComponent],
   providers: [AuthGuard, AuthService],

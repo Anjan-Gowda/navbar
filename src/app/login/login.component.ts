@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit {
   islogin: boolean;
   username: string;
   pwd: string;
- 
   constructor(
     private fb: FormBuilder,
     private as: AuthService,
@@ -27,14 +26,13 @@ export class LoginComponent implements OnInit {
       this.islogin = d;
     });
   }
-
   ngOnInit() {
     /*  this._loginForm = this.fb.group({
       username: ['', [Validators.required]],
       pwd: ['', [Validators.required]],
     }); */
     console.log('here');
-    this.openDialog();
+    this.openDialog('alert','');
   }
 
   login() {
@@ -46,24 +44,32 @@ export class LoginComponent implements OnInit {
         this.islogin = true;
         this.as._isAuth = true;
         this.route.navigateByUrl('/home');
+      } else {
+        this.openDialog('alert-danger',"Incorrect username/password",true);
       }
     }
   }
 
-  openDialog(): void {
+  openDialog(_class, title,req = false): void {
     const dialogRef = this.dialog.open(ModalComponent, {
       disableClose: true,
       width: '250px',
-      data: [
-        { label: 'User name', placeholder: 'User name', ngmodel: '' },
-        { label: 'Password', placeholder: 'Password', ngmodel: '' },
-      ],
+      data: {
+        _d: [
+          { label: 'User name', placeholder: 'User name', ngmodel: '' },
+          { label: 'Password', placeholder: 'Password', ngmodel: '' },
+        ],
+        alert: { class: _class, req: req,title:title },
+      }
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
+    dialogRef.afterClosed().subscribe((result:any) => {
       console.log('The dialog was closed', result);
-      this._loginForm = result;
-      this.login();
+      if(result!=undefined){
+
+        this._loginForm = result._d;
+        this.login();
+      }
     });
   }
 }

@@ -17,21 +17,21 @@ export class NavbarComponent implements OnInit {
   ];
   constructor(private as: AuthService, private route: Router) {
     this._active = 'home';
-this.as.currentState.subscribe(d=>{
-  this.isLoggedIn=d
-})  } 
-
+    this.as.currentState.subscribe((d) => {
+      this.isLoggedIn = d;
+    });
+  } 
   ngOnInit() {}
   active(item) {
     this._active = item;
   }
   signout() {
-this.as._isAuth=false;
-    this.route.navigateByUrl('/login')
+    this.as._isAuth = false;
+    this.isLoggedIn = false;
+    this.route.navigateByUrl('/login');
   }
   signin() {
-    
-this.as._isAuth=true;
-this.route.navigateByUrl('/login')
+    this.as._isAuth = true;
+    this.route.navigateByUrl('/login');
   }
-}
+} 

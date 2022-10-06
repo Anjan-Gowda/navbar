@@ -17,13 +17,11 @@ export class ModalComponent implements OnInit {
       this.template=data
       console.log("d",data);
     }
-
-  ngOnInit() { 
+ 
+  ngOnInit() {  
   }
 
-  
   onNoClick(): void {
     this.dialogRef.close();
   }
-
 }

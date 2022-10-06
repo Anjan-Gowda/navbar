@@ -14,7 +14,7 @@ export class MoviesComponent implements OnInit {
   ngOnInit() {
   
   }
-  
+
   openDialog(): void {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '250px',
@@ -29,4 +29,3 @@ export class MoviesComponent implements OnInit {
     });
   }
 }
- 

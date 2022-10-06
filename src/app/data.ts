@@ -6,7 +6,7 @@ export const data: any[] = [
     bodyType: 'Hatch-back',
     imageUrl:
       'https://media.istockphoto.com/photos/mercedesbenz-aclass-on-the-street-picture-id1018875560?k=20&m=1018875560&s=612x612&w=0&h=9TYm-v5IzgVoBQoG5nGqVcab69JnFwrSuO0iQUouoo8=',
-  }, 
+  },
   { 
     make: 'Audi',
     model: 'A3',
