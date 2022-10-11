@@ -34,4 +34,7 @@ export class NavbarComponent implements OnInit {
     this.as._isAuth = true;
     this.route.navigateByUrl('/login');
   }
+  onToggleSidenav(){
+    
+  }
 } 

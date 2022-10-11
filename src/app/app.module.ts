@@ -20,6 +20,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { AlertsComponent } from './alerts/alerts.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { LayoutComponent } from './layout/layout.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({ 
   imports: [
@@ -31,7 +36,11 @@ import { CarouselComponent } from './carousel/carousel.component';
     MatFormFieldModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    MatToolbarModule ,
+    MatIconModule,
+    FlexLayoutModule
   ],
   declarations: [
     AppComponent,
@@ -43,7 +52,8 @@ import { CarouselComponent } from './carousel/carousel.component';
     CarsComponent,
     ModalComponent,
     AlertsComponent,
-    CarouselComponent
+    CarouselComponent,
+    LayoutComponent
   ],
   bootstrap: [AppComponent],
   providers: [AuthGuard, AuthService],
