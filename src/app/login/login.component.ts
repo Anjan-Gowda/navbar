@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
       ) {
         this.islogin = true;
         this.as._isAuth = true;
-        this.route.navigateByUrl('/home');
+        this.route.navigateByUrl('/cars');
       } else {
         this.openDialog('alert-danger',"Incorrect username/password",true);
       }
