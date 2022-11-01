@@ -12,3 +12,14 @@ mat-sidenav {
 main {
   padding: 10px;
 }
+
+app-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+app-navbar {
+  color: #fff;
+}
